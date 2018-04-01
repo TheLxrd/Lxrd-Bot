@@ -1,3 +1,5 @@
+client = Bot(description="Lxrd-Bot by TheLxrd#5390", command_prefix="=", pm_help = True)
+
 @client.event
 async def on_ready():
 	print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
@@ -24,3 +26,5 @@ async def ping(*args):
 async def autor(*args):
 
 	await client.say(":star: Autor to TheLxrd#5390")
+
+client.run('NDMwMDY1MDUxMDM5MTcwNTcw.DaLPJQ.JliXp__WpsjaV2gA3kpcc7Pm6AU')
