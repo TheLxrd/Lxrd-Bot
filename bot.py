@@ -27,4 +27,6 @@ async def autor(*args):
 
 	await client.say(":star: Autor to TheLxrd#5390")
 
-client.run('NDMwMDY1MDUxMDM5MTcwNTcw.DaLPJQ.JliXp__WpsjaV2gA3kpcc7Pm6AU')
+token = os.environ.get("token")
+print("oof")
+Bot.run(token)
