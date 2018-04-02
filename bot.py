@@ -12,8 +12,8 @@ async def on_ready():
 	print('Support Discord Server: https://discord.gg/FNNNgqb')
 	print('Github Link: https://github.com/Habchy/BasicBot')
 	print('--------')
-	print('You are running BasicBot v2.1') #Do not change this. This will really help us support you, if you need support.
-	print('Created by Habchy#1665')
+	print('You are running Lxrd-Bot 0.1') #Do not change this. This will really help us support you, if you need support.
+	print('Created by TheLxrd#5390')
 	return await client.change_presence(game=discord.Game(name='Work in progress')) #This is buggy, let us know if it doesn't work.
 
 # This is a basic example of a call and response command. You tell it do "this" and it does it.
