@@ -1,32 +1,33 @@
-client = Bot(description="Lxrd-Bot by TheLxrd#5390", command_prefix="=", pm_help = True)
+import discord
+from discord.ext import commands
+from discord.ext.commands import Bot
+import asyncio
+import chalk
 
-@client.event
+bot = commands.Bot(command_prefix='`')
+
+@bot.event
 async def on_ready():
-	print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
-	print('--------')
-	print('Current Discord.py Version: {} | Current Python Version: {}'.format(discord.__version__, platform.python_version()))
-	print('--------')
-	print('Use this link to invite {}:'.format(client.user.name))
-	print('https://discordapp.com/oauth2/authorize?client_id={}&scope=bot&permissions=8'.format(client.user.id))
-	print('--------')
-	print('Support Discord Server: https://discord.gg/FNNNgqb')
-	print('Github Link: https://github.com/Habchy/BasicBot')
-	print('--------')
-	print('You are running Lxrd-Bot 0.1') #Do not change this. This will really help us support you, if you need support.
-	print('Created by TheLxrd#5390')
-	return await client.change_presence(game=discord.Game(name='Work in progress')) #This is buggy, let us know if it doesn't work.
+    print ("Ready when you are xd")
+    print ("I am running on " + bot.user.name)
+    print ("With the ID: " + bot.user.id)
 
-# This is a basic example of a call and response command. You tell it do "this" and it does it.
-@client.command()
-async def ping(*args):
+@bot.command(pass_context=True)
+async def ping(ctx):
+    await bot.say(":ping_pong: ping!! xSSS")
+    print ("user has pinged")
 
-	await client.say(":ping_pong: Pong!")
-	
-@client.command()
-async def autor(*args):
+@bot.command(pass_context=True)
+async def info(ctx, user: discord.Member):
+    await bot.say("The users name is: {}".format(user.name))
+    await bot.say("The users ID is: {}".format(user.id))
+    await bot.say("The users status is: {}".format(user.status))
+    await bot.say("The users highest role is: {}".format(user.top_role))
+    await bot.say("The user joined at: {}".format(user.joined_at))
 
-	await client.say(":star: Autor to TheLxrd#5390")
+@bot.command(pass_context=True)
+async def kick(ctx, user: discord.Member):
+    await bot.say(":boot: Cya, {}. Ya loser!".format(user.name))
+    await bot.kick(user)
 
-token = os.environ.get("token")
-print("oof")
-Bot.run(token)
+bot.run("TOKEN")
