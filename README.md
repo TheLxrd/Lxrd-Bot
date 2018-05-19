@@ -1,2 +1,0 @@
-# Lxrd-Bot
-My bot
